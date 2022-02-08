@@ -20,10 +20,11 @@ public class AccountDaoImpl implements AccountDao {
 	
 	public AccountRTO openAccount(OpenAccountRequest request) {
 		
-		Account entity = accountRepository.saveAndFlush(buildAccountEntity(request.getCustomerId(), 
-																		   request.getInitialCredit()));
+		Account entity = buildAccountEntity(request.getCustomerId(), request.getInitialCredit());		
+		Account response = Optional.of(accountRepository.saveAndFlush(entity))
+								   .orElseThrow(() -> new AccountException("Error saving"));
 		
-		return new AccountRTO(entity.getAccountId(), entity.getCredit(), entity.getCustomer());
+		return new AccountRTO(response.getAccountId(), response.getCredit(), response.getCustomer());
 	}
 	
 	

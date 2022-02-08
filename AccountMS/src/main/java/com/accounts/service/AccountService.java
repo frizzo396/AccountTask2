@@ -3,7 +3,8 @@ package com.accounts.service;
 import org.springframework.http.ResponseEntity;
 
 import com.accounts.request.OpenAccountRequest;
+import com.accounts.rto.AccountRTO;
 
 public interface AccountService {
-	ResponseEntity<String> openAccount(OpenAccountRequest request);
+	ResponseEntity<AccountRTO> openAccount(OpenAccountRequest request);
 }
