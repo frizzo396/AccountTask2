@@ -1,23 +1,23 @@
-package com.transactions.entity;
+package com.transactions.rto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="transactions")
-public class Transaction {
+public class TransactionRTO {
 	
-	@Id @GeneratedValue
 	private Integer transactionId;
 	
-	@Column(name="AMOUNT")
 	private Double amount;
-
-	@Column(name="ACCOUNT_ID")
+	
 	private Integer accountId;
+
+	
+	public TransactionRTO() {
+		
+	}
+	
+	public TransactionRTO(Integer transactionId, Double amount, Integer accountId) {
+		this.accountId = accountId;
+		this.amount = amount;
+		this.transactionId = transactionId;
+	}
 	
 	
 	public Integer getTransactionId() {

@@ -1,5 +1,7 @@
 package com.transactions.dao;
 
-public interface TransactionDao {
+import com.transactions.rto.TransactionRTO;
 
+public interface TransactionDao {
+	TransactionRTO sendStandardTransaction(Integer accountId);
 }
