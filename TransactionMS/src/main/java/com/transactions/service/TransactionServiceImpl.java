@@ -6,9 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.common.request.SendStdTransactionRequest;
+import com.common.rto.TransactionRTO;
 import com.transactions.dao.TransactionDao;
-import com.transactions.request.SendStdTransactionRequest;
-import com.transactions.rto.TransactionRTO;
 
 @Service
 public class TransactionServiceImpl implements TransactionService {

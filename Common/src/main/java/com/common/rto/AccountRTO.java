@@ -1,4 +1,4 @@
-package com.accounts.rto;
+package com.common.rto;
 
 public class AccountRTO {
 	

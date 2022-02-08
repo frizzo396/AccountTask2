@@ -1,4 +1,4 @@
-package com.accounts.request;
+package com.common.request;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;

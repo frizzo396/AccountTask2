@@ -7,7 +7,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 
 import com.accounts.exception.AccountException;
-import com.accounts.request.OpenAccountRequest;
+import com.common.request.OpenAccountRequest;
 
 public class AccountMsInputValidator {
 	

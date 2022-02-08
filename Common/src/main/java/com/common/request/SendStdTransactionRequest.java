@@ -1,4 +1,4 @@
-package com.transactions.request;
+package com.common.request;
 
 public class SendStdTransactionRequest {
 	private Integer accountId;
@@ -8,6 +8,14 @@ public class SendStdTransactionRequest {
 	}
 
 	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
+	}
+	
+	public SendStdTransactionRequest() {
+		
+	}
+	
+	public SendStdTransactionRequest(Integer accountId) {
 		this.accountId = accountId;
 	}
 	

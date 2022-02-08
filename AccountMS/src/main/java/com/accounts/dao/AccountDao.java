@@ -1,7 +1,7 @@
 package com.accounts.dao;
 
-import com.accounts.request.OpenAccountRequest;
-import com.accounts.rto.AccountRTO;
+import com.common.request.OpenAccountRequest;
+import com.common.rto.AccountRTO;
 
 public interface AccountDao {
 	

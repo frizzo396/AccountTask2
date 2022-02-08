@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.accounts.request.OpenAccountRequest;
-import com.accounts.rto.AccountRTO;
 import com.accounts.service.AccountService;
+import com.common.request.OpenAccountRequest;
+import com.common.rto.AccountRTO;
 
 @RestController
 public class AccountController {

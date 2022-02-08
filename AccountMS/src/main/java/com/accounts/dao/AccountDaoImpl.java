@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.accounts.entities.Account;
 import com.accounts.exception.AccountException;
 import com.accounts.repository.AccountRepository;
-import com.accounts.request.OpenAccountRequest;
-import com.accounts.rto.AccountRTO;
+import com.common.request.OpenAccountRequest;
+import com.common.rto.AccountRTO;
 
 @Repository
 public class AccountDaoImpl implements AccountDao {

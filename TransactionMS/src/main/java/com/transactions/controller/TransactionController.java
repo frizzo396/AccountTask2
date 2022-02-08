@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.transactions.request.SendStdTransactionRequest;
-import com.transactions.rto.TransactionRTO;
+import com.common.request.SendStdTransactionRequest;
+import com.common.rto.TransactionRTO;
 import com.transactions.service.TransactionService;
 
 @RestController

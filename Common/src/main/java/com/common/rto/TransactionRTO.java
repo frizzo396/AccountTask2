@@ -1,4 +1,4 @@
-package com.transactions.rto;
+package com.common.rto;
 
 public class TransactionRTO {
 	
