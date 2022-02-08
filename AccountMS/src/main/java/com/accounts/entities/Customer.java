@@ -28,19 +28,7 @@ public class Customer {
 	@Column(name = "ADDRESS")
 	private String address;
 	
-	@OneToMany(mappedBy="customer")
-	private List<Account> accountList;
 	
-	
-
-	public List<Account> getAccountList() {
-		return accountList;
-	}
-
-	public void setAccountList(List<Account> accountList) {
-		this.accountList = accountList;
-	}
-
 	public Integer getId() {
 		return id;
 	}

@@ -4,8 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,9 +16,8 @@ public class Account {
 	@Column(name = "CREDIT")
 	private Double credit;
 	
-	@ManyToOne
-    @JoinColumn(name="CUSTOMER_ID", nullable=false)
-	private Customer customer;
+	@Column(name = "CUSTOMER_ID")
+	private Integer customer;
 
 	
 	public Integer getAccountId() {
@@ -39,14 +36,12 @@ public class Account {
 		this.credit = credit;
 	}
 
-	public Customer getCustomer() {
+	public Integer getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(Integer customer) {
 		this.customer = customer;
 	}
-	
-	
 	
 }
