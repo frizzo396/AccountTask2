@@ -6,10 +6,11 @@ import javax.validation.constraints.NotNull;
 public class OpenAccountRequest {
 	
 	@NotNull(message = "Customer id must be valorized.")
-	@Min(value = 1, message = "Customer id minimun value is 0.")
+	@Min(value = 1, message = "Customer id minimun value is 1.")
 	private Integer customerId;	
 	
 	@NotNull(message = "Initial credit must be valorized.")
+	@Min(value = 0, message = "Initial credi must be positive.")
 	private Double initialCredit;
 	
 	
