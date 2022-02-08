@@ -5,9 +5,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.accounts.entities.Account;
 import com.accounts.exception.AccountException;
 import com.accounts.repository.AccountRepository;
+import com.common.entities.Account;
 import com.common.request.OpenAccountRequest;
 import com.common.rto.AccountRTO;
 

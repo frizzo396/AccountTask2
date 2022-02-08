@@ -5,8 +5,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.common.entities.Transaction;
 import com.common.rto.TransactionRTO;
-import com.transactions.entities.Transaction;
 import com.transactions.exception.TransactionException;
 import com.transactions.repository.TransactionRepository;
 

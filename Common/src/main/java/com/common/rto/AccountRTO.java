@@ -9,6 +9,7 @@ public class AccountRTO {
 	private Integer customerId;
 	
 	
+	
 	public AccountRTO() {
 		
 	}

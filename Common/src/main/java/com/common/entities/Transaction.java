@@ -1,4 +1,4 @@
-package com.transactions.entities;
+package com.common.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
