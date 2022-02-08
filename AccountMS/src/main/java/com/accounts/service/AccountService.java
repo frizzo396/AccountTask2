@@ -1,5 +1,9 @@
 package com.accounts.service;
 
-public interface AccountService {
+import org.springframework.http.ResponseEntity;
 
+import com.accounts.request.OpenAccountRequest;
+
+public interface AccountService {
+	ResponseEntity<String> openAccount(OpenAccountRequest request);
 }

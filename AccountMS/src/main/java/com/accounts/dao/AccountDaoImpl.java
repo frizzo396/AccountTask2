@@ -1,4 +1,4 @@
-package com.account.dao;
+package com.accounts.dao;
 
 import org.springframework.stereotype.Repository;
 

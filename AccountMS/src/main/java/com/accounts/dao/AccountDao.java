@@ -1,4 +1,4 @@
-package com.account.dao;
+package com.accounts.dao;
 
 public interface AccountDao {
 
