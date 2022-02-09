@@ -1,5 +1,9 @@
 package com.common.rto;
 
+import java.util.List;
+
+import com.common.entities.Transaction;
+
 public class AccountRTO {
 	
 	private Integer accountId;
@@ -8,7 +12,8 @@ public class AccountRTO {
 	
 	private Integer customerId;
 	
-	
+	private List<TransactionRTO> transactionsList;
+		
 	
 	public AccountRTO() {
 		
@@ -21,6 +26,15 @@ public class AccountRTO {
 	}
 	
 	
+	
+	public List<TransactionRTO> getTransactionsList() {
+		return transactionsList;
+	}
+
+	public void setTransactionsList(List<TransactionRTO> transactionsList) {
+		this.transactionsList = transactionsList;
+	}
+
 	public Integer getAccountId() {
 		return accountId;
 	}

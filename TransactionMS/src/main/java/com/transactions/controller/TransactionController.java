@@ -16,8 +16,7 @@ public class TransactionController {
 		
 	@Autowired
 	TransactionService transactionService;
-	
-	
+		
 	@PutMapping(value = "/sendStdTransaction", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<TransactionRTO> sendStandardTransaction(@RequestBody SendStdTransactionRequest request){	
 		ResponseEntity<TransactionRTO> response = transactionService.sendStandardTransaction(request);

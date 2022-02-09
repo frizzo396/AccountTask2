@@ -18,10 +18,10 @@ public class AccountController {
 	AccountService accountService;
 	
 	
-	@PutMapping(value="/openAccount",produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="/openAccount", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<AccountRTO> openAccount(@RequestBody OpenAccountRequest request){		
 		ResponseEntity<AccountRTO> response = accountService.openAccount(request);
 		return response;
 	}
-	
+		
 }

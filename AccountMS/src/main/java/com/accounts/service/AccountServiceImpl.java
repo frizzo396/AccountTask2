@@ -11,6 +11,7 @@ import com.accounts.dao.AccountDao;
 import com.accounts.dao.CustomerDao;
 import com.accounts.exception.AccountException;
 import com.accounts.utility.AccountMsInputValidator;
+import com.common.messages.ErrorMessages;
 import com.common.request.OpenAccountRequest;
 import com.common.request.SendStdTransactionRequest;
 import com.common.rto.AccountRTO;
@@ -19,25 +20,31 @@ import com.common.rto.TransactionRTO;
 @Service
 public class AccountServiceImpl implements AccountService {
 	
-	@Autowired
-	AccountDao accountDao;
+	public static final Double CREDIT_ZERO = 0.0; 	
+	private AccountDao accountDao;	
+	private CustomerDao customerDao;	
+	private AccountClient accountClient;
 	
 	@Autowired
-	CustomerDao customerDao;
-	
-	@Autowired
-	AccountClient accountClient;
+	public AccountServiceImpl(AccountDao accountDao, CustomerDao customerDao, AccountClient accountClient) {
+	    this.accountDao = accountDao;
+	    this.customerDao = customerDao;
+	    this.accountClient = accountClient;
+	}
 	
 	@Transactional
 	public ResponseEntity<AccountRTO> openAccount(OpenAccountRequest request) {	
 		AccountMsInputValidator.validateInput(request);
+		if(!customerDao.isValidCustomer(request.getCustomerId())) throw new AccountException(ErrorMessages.CUST_NOT_EXISTS);		
 		
-		if(!customerDao.isValidCustomer(request.getCustomerId())) throw new AccountException("Customer doesn't exists.");		
 		AccountRTO accountRTO = accountDao.openAccount(request);
 		
-		if(accountRTO.getCredit() != 0.0) {
-			@SuppressWarnings("unused")
+		if(accountRTO.getCredit() > CREDIT_ZERO) {
 			ResponseEntity<TransactionRTO> response = accountClient.sendStandardTransaction(new SendStdTransactionRequest(accountRTO.getAccountId()));
+			
+			if(!(response.getBody() == null)) {
+				accountRTO.getTransactionsList().add(response.getBody());
+			}		
 		}
 			
 		return new ResponseEntity<AccountRTO>(accountRTO, HttpStatus.OK);

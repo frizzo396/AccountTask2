@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.accounts.exception.AccountException;
 import com.accounts.repository.AccountRepository;
 import com.common.entities.Account;
+import com.common.messages.ErrorMessages;
 import com.common.request.OpenAccountRequest;
 import com.common.rto.AccountRTO;
 
@@ -22,7 +23,7 @@ public class AccountDaoImpl implements AccountDao {
 		
 		Account entity = buildAccountEntity(request.getCustomerId(), request.getInitialCredit());		
 		Account response = Optional.of(accountRepository.saveAndFlush(entity))
-								   .orElseThrow(() -> new AccountException("Error saving"));
+								   .orElseThrow(() -> new AccountException(ErrorMessages.SAVE_ERROR));
 		
 		return new AccountRTO(response.getAccountId(), response.getCredit(), response.getCustomer());
 	}

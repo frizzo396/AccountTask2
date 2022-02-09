@@ -9,9 +9,11 @@ import com.common.request.SendStdTransactionRequest;
 import com.common.rto.TransactionRTO;
 
 @Component("AccountClient")
-public class AccountClient {	
+public class AccountClient {
+	
 	private static final String BASE_URL = "http://localhost:8080";
 	private static final String SEND_STD_TRANSACTION = "/TransactionMS/sendStdTransaction";
+	
 	private final WebClient webClient;
 	
 	public AccountClient(WebClient.Builder webClientBuilder) {

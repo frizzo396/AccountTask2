@@ -3,14 +3,16 @@ package com.common.request;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import com.common.messages.ErrorMessages;
+
 public class OpenAccountRequest {
 	
-	@NotNull(message = "Customer id must be valorized.")
-	@Min(value = 1, message = "Customer id minimun value is 1.")
+	@NotNull(message = ErrorMessages.CUST_NOT_VALORIZED)
+	@Min(value = 1, message = ErrorMessages.CUST_MIN_VALUE)
 	private Integer customerId;	
 	
-	@NotNull(message = "Initial credit must be valorized.")
-	@Min(value = 0, message = "Initial credi must be positive.")
+	@NotNull(message = ErrorMessages.INIT_CREDIT_NOT_VALORIZED)
+	@Min(value = 0, message = ErrorMessages.INIT_CREDIT_NEGATIVE)
 	private Double initialCredit;
 	
 	
