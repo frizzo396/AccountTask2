@@ -1,5 +1,7 @@
 package com.accounts.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,7 @@ import com.common.messages.ErrorMessages;
 import com.common.request.OpenAccountRequest;
 import com.common.request.SendStdTransactionRequest;
 import com.common.rto.AccountRTO;
+import com.common.rto.CustomerRTO;
 import com.common.rto.TransactionRTO;
 import com.common.rto.UserInfoRTO;
 
@@ -46,16 +49,18 @@ public class AccountServiceImpl implements AccountService {
 			if(!(response.getBody() == null)) {
 				accountRTO.getTransactionsList().add(response.getBody());
 			}		
-		}
-			
+		}		
 		return new ResponseEntity<AccountRTO>(accountRTO, HttpStatus.OK);
 	}
 
+	
 	@Transactional
 	public ResponseEntity<UserInfoRTO> getUserInfo(Integer customerId) {
 		if(!customerDao.isValidCustomer(customerId)) throw new AccountException(ErrorMessages.CUST_NOT_EXISTS);	
 		
+		CustomerRTO customerRTO = customerDao.findCustomerById(customerId);
 		
+		List<AccountRTO> listAccountRTO = accountDao.findAccountsByCustomerId(customerId);
 		
 		return null;
 	}

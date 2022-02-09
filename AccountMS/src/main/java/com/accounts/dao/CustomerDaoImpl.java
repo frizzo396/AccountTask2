@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.accounts.repository.CustomerRepository;
 import com.common.entities.Customer;
+import com.common.rto.CustomerRTO;
 
 @Repository
 public class CustomerDaoImpl implements CustomerDao {
@@ -22,5 +23,12 @@ public class CustomerDaoImpl implements CustomerDao {
 			return true;
 		
 		return false;
+	}
+
+
+	
+	public CustomerRTO findCustomerById(Integer customerId) {		
+		CustomerRTO customerRTO = customerRepository.findCustomerRTObyIdCustomer(customerId);		
+		return customerRTO;
 	}
 }

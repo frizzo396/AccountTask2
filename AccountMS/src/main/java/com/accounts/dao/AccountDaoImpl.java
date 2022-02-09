@@ -1,5 +1,6 @@
 package com.accounts.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,12 @@ public class AccountDaoImpl implements AccountDao {
 		entity.setCustomer(customerId);
 		entity.setCredit(initialCredit);	
 		return entity;
+	}
+
+
+	public List<AccountRTO> findAccountsByCustomerId(Integer customerId) {
+		List<AccountRTO> result = accountRepository.findAccountsByCustomerId(customerId);
+		return result;
 	}
 	
 
