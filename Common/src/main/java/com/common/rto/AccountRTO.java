@@ -2,8 +2,6 @@ package com.common.rto;
 
 import java.util.List;
 
-import com.common.entities.Transaction;
-
 public class AccountRTO {
 	
 	private Integer accountId;

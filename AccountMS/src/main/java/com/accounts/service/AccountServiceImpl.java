@@ -16,6 +16,7 @@ import com.common.request.OpenAccountRequest;
 import com.common.request.SendStdTransactionRequest;
 import com.common.rto.AccountRTO;
 import com.common.rto.TransactionRTO;
+import com.common.rto.UserInfoRTO;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -48,6 +49,15 @@ public class AccountServiceImpl implements AccountService {
 		}
 			
 		return new ResponseEntity<AccountRTO>(accountRTO, HttpStatus.OK);
+	}
+
+	@Transactional
+	public ResponseEntity<UserInfoRTO> getUserInfo(Integer customerId) {
+		if(!customerDao.isValidCustomer(customerId)) throw new AccountException(ErrorMessages.CUST_NOT_EXISTS);	
+		
+		
+		
+		return null;
 	}
 
 }
