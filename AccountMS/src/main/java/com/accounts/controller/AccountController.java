@@ -20,13 +20,22 @@ public class AccountController {
 	@Autowired
 	AccountService accountService;
 	
-	
+	/**
+	 * Endpoint /openAccount, which creates a new account and if initial credit is > 0, sends a standard transaction
+	 * @param OpenAccountRequest
+	 * @return ResponseEntity<AccountRTO>
+	 */
 	@PutMapping(value="/openAccount", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<AccountRTO> openAccount(@RequestBody OpenAccountRequest request){		
 		ResponseEntity<AccountRTO> response = accountService.openAccount(request);
 		return response;
 	}
 	
+	/**
+	 * Endpoint /getCustomerInfo, which retrieves Customer's informations with accounts and transactions list
+	 * @param customerId
+	 * @return ResponseEntity<UserInfoRTO>
+	 */
 	@GetMapping(value="/getCustomerInfo/{customerId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserInfoRTO> getUserInfo(@PathVariable("customerId")Integer customerId){		
 		ResponseEntity<UserInfoRTO> response = accountService.getUserInfo(customerId);

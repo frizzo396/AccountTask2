@@ -14,7 +14,11 @@ public class CustomerDaoImpl implements CustomerDao {
 	@Autowired
 	CustomerRepository customerRepository;
 
-	
+	/**
+	 * Method for checking if customer exists
+	 * @param customerId
+	 * @return Boolean
+	 */
 	public Boolean isValidCustomer(Integer customerId) {		
 		Optional<Customer> customer = customerRepository.findById(customerId);
 		
@@ -25,7 +29,11 @@ public class CustomerDaoImpl implements CustomerDao {
 	}
 
 
-	
+	/**
+	 * Method to find customer by his id
+	 * @param customerId
+	 * @return CustomerRTO
+	 */
 	public CustomerRTO findCustomerById(Integer customerId) {		
 		CustomerRTO customerRTO = customerRepository.findCustomerRTObyIdCustomer(customerId);		
 		return customerRTO;

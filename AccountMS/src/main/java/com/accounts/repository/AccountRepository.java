@@ -10,6 +10,11 @@ import com.common.rto.AccountRTO;
 
 public interface AccountRepository extends JpaRepository<Account, Integer> {
 	
+	/**
+	 * Method which returns an AccountRTO list with Account entities informations finded by customerId
+	 * @param customerId
+	 * @return List<AccountRTO>
+	 */
 	@Query("SELECT " +
 		   "new com.common.rto.AccountRTO(a.accountId, a.credit, a.customer) " +
 		   "FROM Account a " +
