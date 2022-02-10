@@ -18,13 +18,21 @@ public class TransactionServiceImpl implements TransactionService {
 	@Autowired
 	TransactionDao transactionDao;
 	
+	/**
+	 * Method for sending a standard transaction after account opening
+	 * @param SendStdTransactionRequest
+	 * @return ResponseEntity<TransactionRTO>
+	 */
 	@Transactional
 	public ResponseEntity<TransactionRTO> sendStandardTransaction(SendStdTransactionRequest request){		
-		TransactionRTO response = transactionDao.sendStandardTransaction(request.getAccountId());
-		
+		TransactionRTO response = transactionDao.sendStandardTransaction(request.getAccountId());		
 		return new ResponseEntity<TransactionRTO>(response, HttpStatus.OK);
 	}
-
+	
+	/**
+	 * Method for retrieving all transactions
+	 * @return ResponseEntity<List<TransactionRTO>>
+	 */
 	@Transactional
 	public ResponseEntity<List<TransactionRTO>> getAllTransactions() {
 		List<TransactionRTO> response = transactionDao.findAllTransactions();

@@ -18,13 +18,22 @@ public class TransactionController {
 		
 	@Autowired
 	TransactionService transactionService;
-		
+	
+	/**
+	 * Method to send a standard transaction after account opening
+	 * @param SendStdTransactionRequest
+	 * @return ResponseEntity<TransactionRTO>
+	 */
 	@PutMapping(value = "/sendStdTransaction", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<TransactionRTO> sendStandardTransaction(@RequestBody SendStdTransactionRequest request){	
 		ResponseEntity<TransactionRTO> response = transactionService.sendStandardTransaction(request);		
 		return response;
 	}
 	
+	/**
+	 * Method for retrieve all transactions
+	 * @return ResponseEntity<List<TransactionRTO>>
+	 */
 	@GetMapping(value = "/getAllTransactions", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<TransactionRTO>> getAllTransactions(){	
 		ResponseEntity<List<TransactionRTO>> response = transactionService.getAllTransactions();		

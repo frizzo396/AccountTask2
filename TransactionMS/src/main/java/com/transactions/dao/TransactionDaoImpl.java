@@ -15,12 +15,20 @@ import com.transactions.repository.TransactionRepository;
 
 @Repository
 public class TransactionDaoImpl implements TransactionDao {
+	
+	/**
+	 * Constants
+	 */
 	public static final Double STD_TRANS_AMOUNT = -1.0;
 	
 	@Autowired
 	TransactionRepository transactionRepository;
 	
-	
+	/**
+	 * Method to send a standard transaction after account opening
+	 * @param accountId
+	 * @return TransactionRTO
+	 */
 	public TransactionRTO sendStandardTransaction(Integer accountId) {	
 		Transaction entity = createStdTransactionEntity(accountId);	
 		Transaction result = Optional.of(transactionRepository.saveAndFlush(entity))
@@ -30,6 +38,11 @@ public class TransactionDaoImpl implements TransactionDao {
 	}
 	
 	
+	/**
+	 * Method for building Transaction entity
+	 * @param accountId
+	 * @return Transaction
+	 */
 	private Transaction createStdTransactionEntity(Integer accountId) {
 		Transaction entity = new Transaction();		
 		entity.setAmount(STD_TRANS_AMOUNT);
@@ -38,9 +51,11 @@ public class TransactionDaoImpl implements TransactionDao {
 	}
 
 
-	
-	public List<TransactionRTO> findAllTransactions() {
-		
+	/**
+	 * Method for retrieve all transactions
+	 * @return List<TransactionRTO>
+	 */
+	public List<TransactionRTO> findAllTransactions() {		
 		return transactionRepository.findAllTransactions();
 	}
 	
