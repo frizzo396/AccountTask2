@@ -13,6 +13,7 @@ import com.accounts.dao.AccountDao;
 import com.accounts.dao.CustomerDao;
 import com.accounts.exception.AccountException;
 import com.accounts.utility.AccountMsInputValidator;
+import com.common.entities.Transaction;
 import com.common.messages.ErrorMessages;
 import com.common.request.OpenAccountRequest;
 import com.common.request.SendStdTransactionRequest;
@@ -60,9 +61,11 @@ public class AccountServiceImpl implements AccountService {
 		
 		CustomerRTO customerRTO = customerDao.findCustomerById(customerId);
 		
-		List<AccountRTO> listAccountRTO = accountDao.findAccountsByCustomerId(customerId);
+		List<AccountRTO> accountList = accountDao.findAccountsByCustomerId(customerId); 
 		
+
 		return null;
 	}
 
+	
 }

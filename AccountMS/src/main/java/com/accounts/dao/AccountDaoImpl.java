@@ -39,7 +39,7 @@ public class AccountDaoImpl implements AccountDao {
 
 
 	public List<AccountRTO> findAccountsByCustomerId(Integer customerId) {
-		List<AccountRTO> result = accountRepository.findAccountsByCustomerId(customerId);
+		List<AccountRTO> result = accountRepository.findAccountRTObyIdCustomer(customerId);
 		return result;
 	}
 	

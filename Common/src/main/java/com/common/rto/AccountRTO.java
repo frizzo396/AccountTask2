@@ -1,5 +1,6 @@
 package com.common.rto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountRTO {
@@ -10,7 +11,7 @@ public class AccountRTO {
 	
 	private Integer customerId;
 	
-	private List<TransactionRTO> transactionsList;
+	private List<TransactionRTO> transactionsList = new ArrayList<TransactionRTO>();
 		
 	
 	public AccountRTO() {
@@ -23,7 +24,12 @@ public class AccountRTO {
 		this.customerId = customerId;
 	}
 	
-	
+	public AccountRTO(Integer accountId, Double credit, Integer customerId,  List<TransactionRTO> transactionsList) {
+		this.accountId = accountId;
+		this.credit = credit;
+		this.customerId = customerId;
+		this.transactionsList = transactionsList;
+	}
 	
 	public List<TransactionRTO> getTransactionsList() {
 		return transactionsList;

@@ -27,9 +27,9 @@ public class AccountController {
 		return response;
 	}
 	
-	@GetMapping(value="/getUserInfo", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value="/getCustomerInfo/{customerId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserInfoRTO> getUserInfo(@PathVariable("customerId")Integer customerId){		
-		//ResponseEntity<UserInfoRTO> response = accountService.openAccount(request);
-		return null;
+		ResponseEntity<UserInfoRTO> response = accountService.getUserInfo(customerId);
+		return response;
 	}
 }

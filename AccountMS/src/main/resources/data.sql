@@ -1,3 +1,4 @@
+
 INSERT INTO customers (CUSTOMER_ID, FIRST_NAME, LAST_NAME, ADDRESS) VALUES (1, 'Francesco', 'Rizzo', 'Italy');
 INSERT INTO customers (CUSTOMER_ID, FIRST_NAME, LAST_NAME, ADDRESS) VALUES (2, 'Thomas', 'Bell', 'USA');
 INSERT INTO customers (CUSTOMER_ID, FIRST_NAME, LAST_NAME, ADDRESS) VALUES (3, 'Weston', 'Kent', 'England');

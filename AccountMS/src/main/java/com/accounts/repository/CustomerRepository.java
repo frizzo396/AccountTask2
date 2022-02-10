@@ -12,6 +12,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 	@Query("SELECT " +
 	       "new com.common.rto.CustomerRTO(c.firstName, c.lastName, c.address) " +
 	       "FROM Customer c " +
-	       "WHERE c.customerId = :customerId")
+	       "WHERE c.id = :customerId")
 	CustomerRTO findCustomerRTObyIdCustomer(@Param("customerId") Integer customerId);
 }

@@ -7,8 +7,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(scanBasePackages = {"com.accounts.*"})
-@EnableJpaRepositories(basePackages = "com.accounts.repository")
-@EntityScan("com.accounts.entities")
+@EnableJpaRepositories(basePackages = {"com.accounts.repository"})
+@EntityScan(basePackages = {"com.common.entities"})
 public class AccountApplication extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) {
