@@ -1,7 +1,13 @@
 package com.common.rto;
 
+/**
+ * Transaction return object
+ */
 public class TransactionRTO {
 	
+	/**
+	 * Fields
+	 */
 	private Integer transactionId;
 	
 	private Double amount;
@@ -9,6 +15,9 @@ public class TransactionRTO {
 	private Integer accountId;
 
 	
+	/**
+	 * Constructors
+	 */
 	public TransactionRTO() {
 		
 	}
@@ -19,7 +28,9 @@ public class TransactionRTO {
 		this.transactionId = transactionId;
 	}
 	
-	
+	/**
+	 * Getters and setters
+	 */
 	public Integer getTransactionId() {
 		return transactionId;
 	}

@@ -1,21 +1,35 @@
 package com.common.rto;
 
-
+/**
+* Customer return object
+*
+*/
 public class CustomerRTO {
 	
+	/**
+	 * Fields
+	 */
 	private String firstName;
 	
 	private String lastName;
 	
 	private String address;
 	
+	/**
+	 * Constructor
+	 * @param firstName
+	 * @param lastName
+	 * @param address
+	 */
 	public CustomerRTO(String firstName, String lastName, String address) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
 	}
 	
-
+	/**
+	 * Getters and setters
+	 */
 	public String getFirstName() {
 		return firstName;
 	}

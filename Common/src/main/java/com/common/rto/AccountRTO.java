@@ -3,8 +3,15 @@ package com.common.rto;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Account return object
+ *
+ */
 public class AccountRTO {
 	
+	/**
+	 * Fields
+	 */
 	private Integer accountId;
 	
 	private Double credit;
@@ -13,7 +20,9 @@ public class AccountRTO {
 	
 	private List<TransactionRTO> transactionsList = new ArrayList<TransactionRTO>();
 		
-	
+	/**
+	 * Constructors
+	 */
 	public AccountRTO() {
 		
 	}
@@ -31,6 +40,9 @@ public class AccountRTO {
 		this.transactionsList = transactionsList;
 	}
 	
+	/**
+	 * Getters and setters
+	 */
 	public List<TransactionRTO> getTransactionsList() {
 		return transactionsList;
 	}

@@ -7,10 +7,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Customer entity
+ */
 @Table(name = "customers")
 @Entity
 public class Customer {
 	
+	/**
+	 * Fields
+	 */
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CUSTOMER_ID")
@@ -26,6 +32,9 @@ public class Customer {
 	private String address;
 	
 	
+	/**
+	 * Getters and setters
+	 */
 	public Integer getId() {
 		return id;
 	}

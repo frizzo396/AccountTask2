@@ -7,10 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * Transaction entity
+ *
+ */
 @Entity
 @Table(name="TRANSACTIONS")
 public class Transaction {
 	
+	/**
+	 * Fields
+	 */
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer transactionId;
 	
@@ -20,7 +28,9 @@ public class Transaction {
 	@Column(name="ACCOUNT_ID")
 	private Integer accountId;
 	
-	
+	/**
+	 * Getters and setters
+	 */
 	public Integer getTransactionId() {
 		return transactionId;
 	}

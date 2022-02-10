@@ -5,8 +5,15 @@ import javax.validation.constraints.NotNull;
 
 import com.common.messages.ErrorMessages;
 
+/**
+ * Request for /openAccount endpoint
+ *
+ */
 public class OpenAccountRequest {
 	
+	/**
+	 * Fields
+	 */
 	@NotNull(message = ErrorMessages.CUST_NOT_VALORIZED)
 	@Min(value = 1, message = ErrorMessages.CUST_MIN_VALUE)
 	private Integer customerId;	
@@ -15,7 +22,9 @@ public class OpenAccountRequest {
 	@Min(value = 0, message = ErrorMessages.INIT_CREDIT_NEGATIVE)
 	private Double initialCredit;
 	
-	
+	/**
+	 * Getters and setters
+	 */
 	public Integer getCustomerId() {
 		return customerId;
 	}

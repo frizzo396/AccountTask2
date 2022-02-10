@@ -7,10 +7,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Account entity
+ */
 @Entity
 @Table(name = "accounts")
 public class Account {
 	
+	/**
+	 * Fields
+	 */
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ACCOUNT_ID")
 	private Integer accountId;
@@ -22,6 +28,9 @@ public class Account {
 	private Integer customer;
 
 	
+	/**
+	 * Getters and setters
+	 */
 	public Integer getAccountId() {
 		return accountId;
 	}

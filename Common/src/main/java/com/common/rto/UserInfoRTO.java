@@ -2,8 +2,14 @@ package com.common.rto;
 
 import java.util.List;
 
+/**
+ * User info return object
+ */
 public class UserInfoRTO {
-		
+	
+	/**
+	 * Fields
+	 */
 	private String name;
 	
 	private String surname;
@@ -11,7 +17,10 @@ public class UserInfoRTO {
 	private Double totalBalance = new Double(0.0);
 	
 	private List<AccountRTO> accounts;
-
+	
+	/**
+	 * Getters and setters
+	 */
 	public String getName() {
 		return name;
 	}
