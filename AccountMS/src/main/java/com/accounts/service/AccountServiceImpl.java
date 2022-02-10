@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.accounts.client.AccountClient;
-import com.accounts.dao.AccountDao;
-import com.accounts.dao.CustomerDao;
+import com.accounts.dao.account.AccountDao;
+import com.accounts.dao.customer.CustomerDao;
 import com.accounts.exception.AccountException;
 import com.accounts.utility.AccountMsInputValidator;
 import com.common.entities.Transaction;

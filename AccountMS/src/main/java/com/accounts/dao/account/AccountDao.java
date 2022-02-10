@@ -1,4 +1,4 @@
-package com.accounts.dao;
+package com.accounts.dao.account;
 
 import java.util.List;
 

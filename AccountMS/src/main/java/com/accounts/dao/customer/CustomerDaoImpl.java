@@ -1,4 +1,4 @@
-package com.accounts.dao;
+package com.accounts.dao.customer;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

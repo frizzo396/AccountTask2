@@ -1,4 +1,4 @@
-package com.accounts.dao;
+package com.accounts.dao.customer;
 
 import com.common.rto.CustomerRTO;
 

@@ -1,4 +1,4 @@
-package com.accounts.dao;
+package com.accounts.dao.account;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,7 +46,7 @@ public class AccountDaoImpl implements AccountDao {
 
 	
 	public Double updateCredit(Integer accountId, Double amountTransactions) {
-		Account account = accountRepository.findById(accountId).orElseThrow(() -> new AccountException("Account not found"));		
+		Account account = accountRepository.findById(accountId).orElseThrow(() -> new AccountException(ErrorMessages.ACCOUNT_NOT_FOUND));		
 		account.setCredit(account.getCredit() + amountTransactions);	
 		accountRepository.saveAndFlush(account);
 		
