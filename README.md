@@ -21,7 +21,7 @@ This microservice contains two endpoints:
 
 
 # Testing
-Put the .war files in a Tomcat instance and launch.
+Import projects on eclipse, build with "maven clean" and "maven install", then put .war files in serve instance (Tomcat) and run
 
 1) Send with Postman a PUT request to endpoint /openAccount, with a json body 
 Example:
