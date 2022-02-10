@@ -28,6 +28,9 @@ public class Transaction {
 	@Column(name="ACCOUNT_ID")
 	private Integer accountId;
 	
+	@Column(name = "CUSTOMER_ID")
+	private Integer customerId;
+	
 	/**
 	 * Getters and setters
 	 */
@@ -54,6 +57,12 @@ public class Transaction {
 	public void setAccountId(Integer accountId) {
 		this.accountId = accountId;
 	}
-	
-	
+
+	public Integer getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
+	}
 }

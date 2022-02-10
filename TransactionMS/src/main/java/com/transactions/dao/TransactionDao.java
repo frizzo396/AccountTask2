@@ -10,11 +10,11 @@ public interface TransactionDao {
 	 * @param accountId
 	 * @return TransactionRTO
 	 */
-	TransactionRTO sendStandardTransaction(Integer accountId);
+	TransactionRTO sendStandardTransaction(Integer accountId, Integer customerId);
 	
 	/**
 	 * Method for retrieve all transactions
 	 * @return List<TransactionRTO>
 	 */
-	List<TransactionRTO> findAllTransactions();
+	List<TransactionRTO> getCustomerTransactions(Integer customerId);
 }

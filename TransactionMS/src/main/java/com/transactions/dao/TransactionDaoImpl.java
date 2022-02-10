@@ -29,12 +29,12 @@ public class TransactionDaoImpl implements TransactionDao {
 	 * @param accountId
 	 * @return TransactionRTO
 	 */
-	public TransactionRTO sendStandardTransaction(Integer accountId) {	
-		Transaction entity = createStdTransactionEntity(accountId);	
+	public TransactionRTO sendStandardTransaction(Integer accountId, Integer customerId) {	
+		Transaction entity = createStdTransactionEntity(accountId, customerId);	
 		Transaction result = Optional.of(transactionRepository.saveAndFlush(entity))
 									 .orElseThrow(() -> new TransactionException(ErrorMessages.SAVE_ERROR));
 			
-		return new TransactionRTO(result.getTransactionId(), result.getAmount(), result.getAccountId());
+		return new TransactionRTO(result.getTransactionId(), result.getAmount(), result.getAccountId(), result.getCustomerId());
 	}
 	
 	
@@ -43,10 +43,11 @@ public class TransactionDaoImpl implements TransactionDao {
 	 * @param accountId
 	 * @return Transaction
 	 */
-	private Transaction createStdTransactionEntity(Integer accountId) {
+	private Transaction createStdTransactionEntity(Integer accountId, Integer customerId) {
 		Transaction entity = new Transaction();		
 		entity.setAmount(STD_TRANS_AMOUNT);
 		entity.setAccountId(accountId);	
+		entity.setCustomerId(customerId);
 		return entity;
 	}
 
@@ -55,8 +56,8 @@ public class TransactionDaoImpl implements TransactionDao {
 	 * Method for retrieve all transactions
 	 * @return List<TransactionRTO>
 	 */
-	public List<TransactionRTO> findAllTransactions() {		
-		return transactionRepository.findAllTransactions();
+	public List<TransactionRTO> getCustomerTransactions(Integer customerId) {		
+		return transactionRepository.getCustomerTransactions(customerId);
 	}
 	
 	

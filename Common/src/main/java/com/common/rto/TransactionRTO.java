@@ -13,6 +13,8 @@ public class TransactionRTO {
 	private Double amount;
 	
 	private Integer accountId;
+	
+	private Integer customerId;
 
 	
 	/**
@@ -22,10 +24,11 @@ public class TransactionRTO {
 		
 	}
 	
-	public TransactionRTO(Integer transactionId, Double amount, Integer accountId) {
+	public TransactionRTO(Integer transactionId, Double amount, Integer accountId, Integer customerId) {
 		this.accountId = accountId;
 		this.amount = amount;
 		this.transactionId = transactionId;
+		this.setCustomerId(customerId);
 	}
 	
 	/**
@@ -53,6 +56,14 @@ public class TransactionRTO {
 
 	public void setAccountId(Integer accountId) {
 		this.accountId = accountId;
+	}
+
+	public Integer getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
 	
 	

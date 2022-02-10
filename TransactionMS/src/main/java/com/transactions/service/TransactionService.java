@@ -20,6 +20,6 @@ public interface TransactionService {
 	 * Method for retrieving all transactions
 	 * @return ResponseEntity<List<TransactionRTO>>
 	 */
-	ResponseEntity<List<TransactionRTO>> getAllTransactions();
+	ResponseEntity<List<TransactionRTO>> getCustomerTransactions(Integer customerId);
 
 }

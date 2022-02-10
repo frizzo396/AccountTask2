@@ -14,7 +14,6 @@ import com.accounts.dao.account.AccountDao;
 import com.accounts.dao.customer.CustomerDao;
 import com.accounts.exception.AccountException;
 import com.accounts.utility.AccountMsInputValidator;
-import com.common.entities.Transaction;
 import com.common.messages.ErrorMessages;
 import com.common.request.OpenAccountRequest;
 import com.common.request.SendStdTransactionRequest;
@@ -62,7 +61,7 @@ public class AccountServiceImpl implements AccountService {
 		
 		//If credit > 0 a call, between Account client, to  Transaction service wil send a standard transaction
 		if(accountRTO.getCredit() > CREDIT_ZERO) {
-			ResponseEntity<TransactionRTO> response = accountClient.sendStandardTransaction(new SendStdTransactionRequest(accountRTO.getAccountId()));
+			ResponseEntity<TransactionRTO> response = accountClient.sendStandardTransaction(new SendStdTransactionRequest(accountRTO.getAccountId(), accountRTO.getCustomerId()));
 			
 			//Add transaction to account and calculate new account credit
 			if(!(response.getBody() == null)) {
@@ -93,7 +92,7 @@ public class AccountServiceImpl implements AccountService {
 		List<AccountRTO> accountList = accountDao.findAccountsByCustomerId(customerId); 	
 		
 		//Retrieve transactions list
-		List<TransactionRTO> transactionsList = accountClient.getAllTransactions().getBody();
+		List<TransactionRTO> transactionsList = accountClient.getCustomerTransactions(customerId).getBody();
 		
 		//Build user info RTO
 		UserInfoRTO response = buildUserInfoRTO(customerRTO, accountList, transactionsList);

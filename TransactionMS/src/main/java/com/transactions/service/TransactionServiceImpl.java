@@ -25,7 +25,7 @@ public class TransactionServiceImpl implements TransactionService {
 	 */
 	@Transactional
 	public ResponseEntity<TransactionRTO> sendStandardTransaction(SendStdTransactionRequest request){		
-		TransactionRTO response = transactionDao.sendStandardTransaction(request.getAccountId());		
+		TransactionRTO response = transactionDao.sendStandardTransaction(request.getAccountId(), request.getCustomerId());		
 		return new ResponseEntity<TransactionRTO>(response, HttpStatus.OK);
 	}
 	
@@ -34,8 +34,8 @@ public class TransactionServiceImpl implements TransactionService {
 	 * @return ResponseEntity<List<TransactionRTO>>
 	 */
 	@Transactional
-	public ResponseEntity<List<TransactionRTO>> getAllTransactions() {
-		List<TransactionRTO> response = transactionDao.findAllTransactions();
+	public ResponseEntity<List<TransactionRTO>> getCustomerTransactions(Integer customerId) {
+		List<TransactionRTO> response = transactionDao.getCustomerTransactions(customerId);
 		return new ResponseEntity<List<TransactionRTO>>(response, HttpStatus.OK);
 	}
 

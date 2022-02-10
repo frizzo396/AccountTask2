@@ -11,6 +11,8 @@ public class SendStdTransactionRequest {
 	 */
 	private Integer accountId;
 	
+	private Integer customerId;
+	
 	
 	/**
 	 * Getters and setters
@@ -23,12 +25,22 @@ public class SendStdTransactionRequest {
 		this.accountId = accountId;
 	}
 	
+	
+	public Integer getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
+	}
+
 	public SendStdTransactionRequest() {
 		
 	}
 	
-	public SendStdTransactionRequest(Integer accountId) {
+	public SendStdTransactionRequest(Integer accountId, Integer customerId) {
 		this.accountId = accountId;
+		this.customerId = customerId;
 	}
 	
 }
