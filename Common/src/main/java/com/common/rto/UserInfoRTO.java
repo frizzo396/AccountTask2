@@ -8,7 +8,7 @@ public class UserInfoRTO {
 	
 	private String surname;
 	
-	private Double totalBalance;
+	private Double totalBalance = new Double(0.0);
 	
 	private List<AccountRTO> accounts;
 

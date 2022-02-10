@@ -42,6 +42,16 @@ public class AccountDaoImpl implements AccountDao {
 		List<AccountRTO> result = accountRepository.findAccountRTObyIdCustomer(customerId);
 		return result;
 	}
+
+
+	
+	public Double updateCredit(Integer accountId, Double amountTransactions) {
+		Account account = accountRepository.findById(accountId).orElseThrow(() -> new AccountException("Account not found"));		
+		account.setCredit(account.getCredit() + amountTransactions);	
+		accountRepository.saveAndFlush(account);
+		
+		return account.getCredit();
+	}
 	
 
 }

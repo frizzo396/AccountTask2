@@ -9,5 +9,7 @@ public interface AccountDao {
 	
 	AccountRTO openAccount(OpenAccountRequest request);
 	
+	Double updateCredit(Integer accountId, Double amountTransactions);
+	
 	List<AccountRTO> findAccountsByCustomerId(Integer customerId);
 }
