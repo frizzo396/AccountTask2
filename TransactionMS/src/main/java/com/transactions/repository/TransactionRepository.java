@@ -16,7 +16,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Intege
 	 * @return List<TransactionRTO>
 	 */
 	@Query("SELECT " +
-		       "new com.common.rto.TransactionRTO(t.transactionId, t.amount, t.accountId, t.customerId) " +
+		       "new com.common.rto.TransactionRTO(t.transactionId, t.amount, t.accountId) " +
 		       "FROM Transaction t " +
 		       "WHERE t.customerId = :customerId")
 	List<TransactionRTO> getCustomerTransactions(@Param("customerId") Integer customerId);

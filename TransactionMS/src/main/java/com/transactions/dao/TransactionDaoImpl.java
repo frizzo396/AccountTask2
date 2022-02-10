@@ -34,7 +34,7 @@ public class TransactionDaoImpl implements TransactionDao {
 		Transaction result = Optional.of(transactionRepository.saveAndFlush(entity))
 									 .orElseThrow(() -> new TransactionException(ErrorMessages.SAVE_ERROR));
 			
-		return new TransactionRTO(result.getTransactionId(), result.getAmount(), result.getAccountId(), result.getCustomerId());
+		return new TransactionRTO(result.getTransactionId(), result.getAmount(), result.getAccountId());
 	}
 	
 	
