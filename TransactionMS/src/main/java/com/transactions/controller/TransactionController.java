@@ -1,5 +1,7 @@
 package com.transactions.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -24,9 +26,9 @@ public class TransactionController {
 	}
 	
 	@GetMapping(value = "/getAllTransactions", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<TransactionRTO> getAllTransactions(){	
-		//ResponseEntity<TransactionRTO> response = transactionService.sendStandardTransaction(request);		
-		return null;
+	public ResponseEntity<List<TransactionRTO>> getAllTransactions(){	
+		ResponseEntity<List<TransactionRTO>> response = transactionService.getAllTransactions();		
+		return response;
 	}
 	
 }

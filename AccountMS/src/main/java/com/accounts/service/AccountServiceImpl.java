@@ -63,6 +63,7 @@ public class AccountServiceImpl implements AccountService {
 		
 		List<AccountRTO> accountList = accountDao.findAccountsByCustomerId(customerId); 
 		
+		List<TransactionRTO> transactionsList = accountClient.getAllTransactions().getBody();
 
 		return null;
 	}

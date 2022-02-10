@@ -1,5 +1,7 @@
 package com.transactions.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,12 @@ public class TransactionServiceImpl implements TransactionService {
 		TransactionRTO response = transactionDao.sendStandardTransaction(request.getAccountId());
 		
 		return new ResponseEntity<TransactionRTO>(response, HttpStatus.OK);
+	}
+
+	@Transactional
+	public ResponseEntity<List<TransactionRTO>> getAllTransactions() {
+		List<TransactionRTO> response = transactionDao.findAllTransactions();
+		return new ResponseEntity<List<TransactionRTO>>(response, HttpStatus.OK);
 	}
 
 }

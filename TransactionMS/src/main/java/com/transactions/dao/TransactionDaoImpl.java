@@ -1,5 +1,6 @@
 package com.transactions.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,15 @@ public class TransactionDaoImpl implements TransactionDao {
 		entity.setAccountId(accountId);	
 		return entity;
 	}
+
+
+	
+	public List<TransactionRTO> findAllTransactions() {
+		
+		return transactionRepository.findAllTransactions();
+	}
+	
+	
 
 
 }
