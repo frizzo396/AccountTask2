@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication(scanBasePackages = {"com.transactions.*"})
-@EnableJpaRepositories(basePackages = "com.transactions.repository")
-@EntityScan("com.transactions.entities")
+@EnableJpaRepositories(basePackages = {"com.transactions.repository"})
+@EntityScan(basePackages = {"com.common.entities"})
 public class TransactionApplication extends SpringBootServletInitializer  {
 	
 		public static void main(String[] args) {

@@ -3,14 +3,15 @@ package com.common.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="transactions")
+@Table(name="TRANSACTIONS")
 public class Transaction {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer transactionId;
 	
 	@Column(name="AMOUNT")

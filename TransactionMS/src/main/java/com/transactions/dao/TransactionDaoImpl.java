@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.common.entities.Transaction;
 import com.common.messages.ErrorMessages;
+
 import com.common.rto.TransactionRTO;
 import com.transactions.exception.TransactionException;
 import com.transactions.repository.TransactionRepository;
@@ -17,6 +18,7 @@ public class TransactionDaoImpl implements TransactionDao {
 	
 	@Autowired
 	TransactionRepository transactionRepository;
+	
 	
 	public TransactionRTO sendStandardTransaction(Integer accountId) {	
 		Transaction entity = createStdTransactionEntity(accountId);	
@@ -33,5 +35,6 @@ public class TransactionDaoImpl implements TransactionDao {
 		entity.setAccountId(accountId);	
 		return entity;
 	}
+
 
 }
